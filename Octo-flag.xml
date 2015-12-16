@@ -1,0 +1,200 @@
+<?xml version="1.0"?>
+<map proto="1.4.0" game="Octo-Flag">
+<name>Octo-Flag</name>
+<version>1.1.0</version>
+<objective>Gain points by holding your flag!</objective>
+<authors>
+    <author uuid="7ab24d14-0801-48ba-8fea-147ddf400067"/>
+    <!-- samtheman43 -->
+    <author uuid="fe3608b7-d105-4029-8800-34b3147065b6"/>
+    <!--  rockymine  -->
+</authors>
+<blitz>
+    <lives>1</lives>
+    <broadcastLives>true</broadcastLives>
+</blitz>
+<score>
+    <limit>250</limit>    
+</score>
+<time>1m30s</time>
+<teams>
+    <team id="green" color="green" max="1">Green</team>
+    <team id="blue" color="blue" max="1">Blue</team>
+    <team id="gray" color="gray" max="1">Gray</team>
+    <team id="pink" color="light purple" max="1">Pink</team>
+    <team id="red" color="red" max="1">Red</team>
+    <team id="orange" color="gold" max="1">Orange</team>
+    <team id="yellow" color="yellow" max="1">Yellow</team>
+    <team id="aqua" color="aqua" max="1">Light Blue</team>
+</teams>
+<kits>
+    <kit id="spawn">
+        <item slot="3" projectile="silverfish gun" prevent-sharing="true" name="`aSilverfish Gun">418</item>
+        <item slot="5" projectile="tnt gun" prevent-sharing="true" name="`cTNT Gun">417</item>
+        <potion duration="oo" amplifier="2">increase damage</potion>
+        <shield health="8" delay="10s"/>
+    </kit>
+    <kit id="greenSpawn" parents="spawn">
+        <chestplate locked="true" color="667F33">leather chestplate</chestplate>
+        <leggings locked="true">gold leggings</leggings>
+        <boots locked="true" color="667F33">leather boots</boots>
+    </kit>
+    <kit id="blueSpawn" parents="spawn">
+        <chestplate locked="true" color="334CB2">leather chestplate</chestplate>
+        <leggings locked="true">gold leggings</leggings>
+        <boots locked="true" color="334CB2">leather boots</boots>
+    </kit>
+    <kit id="graySpawn" parents="spawn">
+        <chestplate locked="true" color="4C4C4C">leather chestplate</chestplate>
+        <leggings locked="true">gold leggings</leggings>
+        <boots locked="true" color="4C4C4C">leather boots</boots>
+    </kit>
+    <kit id="pinkSpawn" parents="spawn">
+        <chestplate locked="true" color="F27FA5">leather chestplate</chestplate>
+        <leggings locked="true">gold leggings</leggings>
+        <boots locked="true" color="F27FA5">leather boots</boots>
+    </kit>
+    <kit id="redSpawn" parents="spawn">
+        <chestplate locked="true" color="993333">leather chestplate</chestplate>
+        <leggings locked="true">gold leggings</leggings>
+        <boots locked="true" color="993333">leather boots</boots>
+    </kit>
+    <kit id="orangeSpawn" parents="spawn">
+        <chestplate locked="true" color="D87F33">leather chestplate</chestplate>
+        <leggings locked="true">gold leggings</leggings>
+        <boots locked="true" color="D87F33">leather boots</boots>
+    </kit>
+    <kit id="yellowSpawn" parents="spawn">
+        <chestplate locked="true" color="E5E533">leather chestplate</chestplate>
+        <leggings locked="true">gold leggings</leggings>
+        <boots locked="true" color="E5E533">leather boots</boots>
+    </kit>
+    <kit id="aquaSpawn" parents="spawn">
+        <chestplate locked="true" color="4C7F99">leather chestplate</chestplate>
+        <leggings locked="true">gold leggings</leggings>
+        <boots locked="true" color="4C7F99">leather boots</boots>
+    </kit>
+</kits>
+<projectiles>
+    <projectile id="silverfish gun" name="`aSilverfish Gun" projectile="Silverfish" velocity="3.5" throwable="false" damage="5" cooldown="0.5s" click="right"/>
+    <projectile id="tnt gun" name="`cTNT Gun" projectile="TNTPrimed" velocity="2" throwable="false" damage="10" cooldown="5s" click="right"/>
+</projectiles>
+<spawns>
+    <spawn team="green" kit="greenSpawn">
+        <regions yaw="179.9">
+            <block>14.461,12.0,-39.642</block>
+        </regions>
+    </spawn>
+    <spawn team="blue" kit="blueSpawn">
+        <regions yaw="135.2">
+            <block>-0.5,12.0,-45.5</block>
+        </regions>
+    </spawn>
+    <spawn team="gray" kit="graySpawn">
+        <regions yaw="-90.3">
+            <block>-6.5,12.0,-60.5</block>
+        </regions>
+    </spawn>
+    <spawn team="pink" kit="pinkSpawn">
+        <regions yaw="-45.1">
+            <block>-0.5,12.0,-75.5</block>
+        </regions>
+    </spawn>
+    <spawn team="red" kit="redSpawn">
+        <regions yaw="0.2">
+            <block>14.5,12.0,-81.5</block>
+        </regions>
+    </spawn>
+    <spawn team="orange" kit="orangeSpawn">
+        <regions yaw="45.2">
+            <block>29.5,12.0,-75.5</block>
+        </regions>
+    </spawn>
+    <spawn team="yellow" kit="yellowSpawn">
+        <regions yaw="89.9">
+            <block>35.5,12.0,-60.5</block>
+        </regions>
+    </spawn>
+    <spawn team="aqua" kit="aquaSpawn">
+        <regions yaw="134.7">
+            <block>29.5,12.0,-45.5</block>
+        </regions>
+    </spawn>
+    <default>
+        <regions yaw="-89.6">
+            <block>14.221,7.0,-60.484</block>
+        </regions>
+    </default>
+</spawns>
+<regions>
+    <apply block="never">
+        <region><below y="12"/></region>
+    </apply>
+</regions>
+<filters>
+    <team id="green-only">green</team>
+    <team id="blue-only">blue</team>
+    <team id="gray-only">gray</team>
+    <team id="pink-only">pink</team>
+    <team id="red-only">red</team>
+    <team id="orange-only">orange</team>
+    <team id="yellow-only">yellow</team>
+    <team id="aqua-only">aqua</team>
+</filters>
+<killreward>
+    <item amount="8" material="snow ball"/>
+</killreward>
+<timelock>on</timelock>
+<hunger>
+    <depletion>off</depletion>
+</hunger>
+<flags points-rate="3" beam="false">
+    <post id="green-post" pickup-filter="green-only">14.5,12,-39.5</post>
+    <post id="blue-post" pickup-filter="blue-only">-0.5,12,-45.5</post>
+    <post id="gray-post" pickup-filter="gray-only">-6.5,12,-60.5</post>
+    <post id="pink-post" pickup-filter="pink-only">-0.5,12,-75.5</post>
+    <post id="red-post" pickup-filter="red-only">14.5,12,-81.5</post>
+    <post id="orange-post" pickup-filter="orange-only">29.5,12,-75.5</post>
+    <post id="yellow-post" pickup-filter="yellow-only">35.5,12,-60.5</post>
+    <post id="aqua-post" pickup-filter="aqua-only">29.5,12,-45.5</post>
+    
+    <flag id="green-flag" name="Green Flag" owner="green" post="green-post" carry-message="Hold your `2flag to gain points!"/>
+    <flag id="blue-flag" name="Blue Flag" owner="blue" post="blue-post" carry-message="Hold your `9flag `bto gain points!"/>
+    <flag id="gray-flag" name="Gray Flag" owner="gray" post="gray-post" carry-message="Hold your `7flag `bto gain points!"/>
+    <flag id="pink-flag" name="Pink Flag" owner="pink" post="pink-post" carry-message="Hold your `dflag `bto gain points!"/>
+    <flag id="red-flag" name="Red Flag" owner="red" post="red-post" carry-message="Hold your `cflag `bto gain points!"/>
+    <flag id="orange-flag" name="Orange Flag" owner="orange" post="orange-post" carry-message="Hold your `6flag `bto gain points!"/>
+    <flag id="yellow-flag" name="Yellow Flag" owner="yellow" post="yellow-post" carry-message="Hold your `eflag `bto gain points!"/>
+    <flag id="aqua-flag" name="Aqua Flag" owner="aqua" post="aqua-post" carry-message="Hold your `3flag `bto gain points!"/>
+</flags>
+<tnt>
+    <instantignite>off</instantignite>
+    <fuse>2s</fuse>
+    <blockdamage>true</blockdamage>
+</tnt>
+<itemremove>
+    <item>log</item>  
+    <item>log_2</item>
+    <item>sapling</item>
+    <item>apple</item>
+    <item>leaves</item>
+    <item>leather chestplate</item>
+    <item>gold leggings</item>
+    <item>leather boots</item>
+    <item>iron barding</item>
+    <item>gold barding</item>
+    <item>spruce fence</item>
+    <item>seeds</item>
+</itemremove>
+<falling-blocks>
+    <rule>
+        <filter>
+            <any>
+                <material>leaves</material>
+                <material>162</material>
+                <material>18</material>
+            </any>
+        </filter>
+    </rule>
+</falling-blocks>
+</map>
