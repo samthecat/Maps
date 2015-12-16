@@ -1,0 +1,558 @@
+<map proto="1.3.6" game="Objectives">
+<name>Lunar Crescent</name>
+<version>1.0.0</version>
+<objective>Destroy the enemy monuments and capture their wool!</objective>
+<authors>
+    <author uuid="7ab24d14-0801-48ba-8fea-147ddf400067"/>
+    <!--samthecat43-->
+</authors>
+<contributors>
+    <contributor uuid="bb628049-e368-4b1c-b8aa-d4557ae9416b" contribution="XML Repairing"/>
+    <!--Anthonny-->
+    <contributor uuid="6e347123-c684-4d7e-996c-44d4924ff172" contribution="XML Repairing"/>
+    <!--SheriffSoco-->
+    <contributor uuid="dff980ed-9f69-491e-b79c-30c21350baf2" contribution="Original XML"/>
+    <!--DoomRobotBoy-->
+</contributors>
+<broadcasts>
+    <tip after="1s">You can only break the monuments with TNT, not with your pickaxe/fist.</tip>
+    <tip after="5s">`3`oEvery 5 minutes `7`o`lCoal Blocks`3`o will drop on the smaller, side islands. Break them to receive `4`ogrenades`3`o.</tip>
+    <tip after="10s">`3`oEvery 10 minutes `6`o`lDiamond Blocks`3`o will drop on the center island. Break them to receive `b`oarmor`3`o, `b`ogolden apples`3`o and a `b`opower bow`3`o.</tip>
+    <alert after="5m" count="oo">`7`oCoal Blocks`3`o have dropped!</alert>
+    <alert after="10m" count="oo">`6`oGold Blocks`3`o have dropped!</alert>
+</broadcasts>
+<teams>
+    <team id="orange" color="gold" max="24" max-overfill="28">Orange Team</team>
+    <team id="magenta" color="light purple" max="24" max-overfill="28">Magenta Team</team>
+</teams>
+<kits>
+    <kit name="spawn">
+        <item slot="9">workbench</item>
+        <item slot="18" amount="3">dispenser</item>
+        <!--  slot="27"  -->
+        <item slot="0">diamond pickaxe</item>
+        <item slot="10">shears</item>
+        <!--  slot="19"  -->
+        <item slot="28" amount="16">arrow</item>s
+        <item slot="1">bow</item>
+        <!--  slot="11"  -->
+        <!--  slot="20"  -->
+        <item slot="29" amount="64">vine</item>
+        <item slot="2" amount="64">vine</item>
+        <item slot="13" amount="16">trap door</item>
+        <item slot="22" amount="16">ladder</item>
+        <item slot="31" amount="64">step</item>
+        <item slot="4" amount="64">nether fence</item>
+        <item slot="23" amount="16">lever</item>
+        <item slot="32" amount="16">stone plate</item>
+        <item slot="5" amount="16">stone button</item>
+        <item slot="15">water bucket</item>
+        <item slot="24">water bucket</item>
+        <item slot="33">water bucket</item>
+        <item slot="6">water bucket</item>
+        <item slot="16" amount="16">diode</item>
+        <item slot="25" amount="16">redstone torch on</item>
+        <item slot="34" amount="64">redstone</item>
+        <item slot="7" amount="16">redstone block</item>
+        <item slot="17" amount="64">tnt</item>
+        <item slot="26" amount="64">tnt</item>
+        <item slot="35" amount="64">tnt</item>
+        <item slot="8" amount="64">tnt</item>
+        <chestplate damage="-3000" enchantment="protection explosions:1" locked="true">diamond chestplate</chestplate>
+    </kit>
+    <kit name="orange" parents="spawn">
+        <item slot="3" amount="64" damage="1">stained clay</item>
+        <item slot="30" amount="64" damage="1">stained clay</item>
+        <item slot="21" amount="64" damage="1">stained clay</item>
+        <item slot="12" amount="64" damage="1">stained glass</item>
+        <helmet color="D87F33" damage="-3000">leather helmet</helmet>
+        <leggings color="D87F33" damage="-3000">leather leggings</leggings>
+        <boots color="D87F33" damage="-3000">leather boots</boots>
+    </kit>
+    <kit name="magenta" parents="spawn">
+        <item slot="3" amount="64" damage="2">stained clay</item>
+        <item slot="30" amount="64" damage="2">stained clay</item>
+        <item slot="21" amount="64" damage="2">stained clay</item>
+        <item slot="12" amount="64" damage="2">stained glass</item>
+        <helmet color="B24CD8" damage="-3000">leather helmet</helmet>
+        <leggings color="B24CD8" damage="-3000">leather leggings</leggings>
+        <boots color="B24CD8" damage="-3000">leather boots</boots>
+    </kit>
+    <kit name="fall-kit">
+        <potion duration="4" amplifier="127">damage resistance</potion>
+        <potion duration="6" amplifier="3">speed</potion>
+    </kit>
+    <kit name="fatigue-kit">
+        <potion duration="oo" amplifier="2">slow digging</potion>
+    </kit>
+    <kit name="no-fatigue-kit">
+        <potion duration="0" amplifier="2">slow digging</potion>
+    </kit>
+</kits>
+<spawns>
+    <spawn team="orange" kit="orange">
+        <regions yaw="-135">
+            <cuboid min="-60,103,-34" max="-57,103,-31"/>
+        </regions>
+    </spawn>
+    <spawn team="magenta" kit="magenta">
+        <regions yaw="45">
+            <cuboid min="75,103,-168" max="72,103,-165"/>
+        </regions>
+    </spawn>
+    <default>
+        <regions yaw="-45">
+            <block>60.5,96,-45.5</block>
+        </regions>
+    </default>
+</spawns>
+<destroyables>
+    <destroyables owner="orange">
+        <destroyable name="Right Monument" materials="packed ice" completion="100%">
+            <region>
+                <cuboid min="-15,36,-31" max="-11,51,-27"/>
+            </region>
+        </destroyable>
+        <destroyable name="Left Monument" materials="packed ice" completion="100%">
+            <region>
+                <cuboid min="-64,36,-80" max="-60,51,-76"/>
+            </region>
+        </destroyable>
+    </destroyables>
+    <destroyables owner="magenta">
+        <destroyable name="Right Monument" materials="packed ice" completion="100%">
+            <region>
+                <cuboid min="26,36,-172" max="30,51,-168"/>
+            </region>
+        </destroyable>
+        <destroyable name="Left Monument" materials="packed ice" completion="100%">
+            <region>
+                <cuboid min="75,36,-123" max="79,51,-119"/>
+            </region>
+        </destroyable>
+    </destroyables>
+    <destroyables name="Spawn Platforms" show="false" materials="ender stone" mode-changes="true">
+        <destroyable owner="orange">
+            <region>
+                <cuboid min="-61,102,-35" max="-56,103,-30"/>
+            </region>
+        </destroyable>
+        <destroyable owner="magenta">
+            <region>
+                <cuboid min="71,102,-169" max="76,103,-164"/>
+            </region>
+        </destroyable>
+    </destroyables>
+</destroyables>
+<modes>
+    <mode after="15s" material="air" name="Players have been realeased!/>
+</modes>
+<wools>
+    <wool team="orange" location="60.5,24,-153.5" color="magenta">
+        <monument><block>-62.5,30,-28.5</block></monument>
+    </wool>
+    <wool team="magenta" location="-45.5,24,-45.5" color="orange">
+        <monument><block>77.5,30,-170.5</block></monument>
+    </wool>
+</wools>
+<regions>
+    <!-- Region Defining -->
+    <cuboid name="min-build" min="-oo,0,-oo" max="oo,20,oo"/>
+    <rectangle name="all" min="-oo,-oo" max="oo,oo"/>
+    <union name="map">
+        <rectangle min="-71,-20" max="-7,-83"/>
+        <rectangle min="86,-179" max="22,-115"/>
+        <rectangle min="-41,-83" max="56,-121"/>
+        <rectangle min="-17,-148" max="32,-50"/>
+        <rectangle min="-8,-37" max="12,-52"/>
+        <rectangle min="31,-61" max="40,-80"/>
+        <rectangle min="55,-91" max="69,-116"/>
+        <rectangle min="23,-162" max="3,-147"/>
+        <rectangle min="-16,-138" max="-28,-120"/>
+        <rectangle min="-40,-108" max="-54,-83"/>
+        <rectangle min="-8,-130" max="-6,-128"/>
+        <rectangle min="19,-71" max="21,-69"/>
+        
+    </union>
+    <complement name="orange-coalClay">
+        <cuboid name="orangeRegion" min="-37,31,-105" max="-30,32,-98"/>
+        <cuboid name="orangeComplement" min="-36,31,-104" max="-31,32,-99"/>
+    </complement>
+    <complement name="magenta-coalClay">
+        <cuboid name="magentaRegion" min="42,31,-101" max="49,32,-94"/>
+        <cuboid name="magentaComplement" min="43,31,-100" max="48,32,-95"/>
+    </complement>
+    <union name="orange-leftClay">
+        <cuboid min="-60,36,-76" max="-59,51,-75"/>
+        <cuboid min="-65,36,-76" max="-64,51,-75"/>
+        <cuboid min="-65,36,-81" max="-64,51,-80"/>
+        <cuboid min="-60,36,-81" max="-59,51,-80"/>
+    </union>
+    <union name="orange-rightClay">
+        <cuboid min="-11,36,-27" max="-10,51,-26"/>
+        <cuboid min="-16,36,-27" max="-15,51,-26"/>
+        <cuboid min="-16,36,-32" max="-15,51,-31"/>
+        <cuboid min="-11,36,-32" max="-10,51,-31"/>
+    </union>
+    <union name="magenta-leftClay">
+        <cuboid min="79,36,-119" max="80,51,-118"/>
+        <cuboid min="74,36,-119" max="75,51,-118"/>
+        <cuboid min="74,36,-124" max="75,51,-123"/>
+        <cuboid min="79,36,-124" max="80,51,-123"/>
+    </union>
+    <union name="magenta-rightClay">
+        <cuboid min="30,36,-168" max="31,51,-167"/>
+        <cuboid min="25,36,-168" max="26,51,-167"/>
+        <cuboid min="25,36,-173" max="26,51,-172"/>
+        <cuboid min="30,36,-173" max="31,51,-172"/>
+    </union>
+    <union name="beacon-regions">
+        <cuboid min="-15,51,-31" max="-11,53,-27"/>
+        <cuboid min="-64,51,-80" max="-60,53,-76"/>
+        <cuboid min="26,51,-172" max="30,53,-168"/>
+        <cuboid min="75,51,-123" max="79,53,-119"/>
+    </union>
+    <union name="endstone-regions">
+        <cuboid name="magenta-spawn-endstone" min="22,20,-179" max="86,35,-115"/>
+        <cuboid name="magenta-center" min="26,20,-138" max="45,34,-119"/>
+        <cuboid name="magenta-coal" min="39,20,-104" max="52,35,-91"/>
+        <cuboid name="magenta-house" min="-17,20,-138" max="2,46,-119"/>
+        <cuboid name="center" min="-3,20,-109" max="16,32,-90"/>
+        <cuboic name="orange-spawn-endstone" min="-70,20,-84" max="-7,35,-20"/>
+        <cuboid name="orange-center" min="-30,20,-80" max="-11,34,-61"/>
+        <cuboid name="orange-coal" min="-40,20,-108" max="-27,35,-95"/>
+        <cuboid name="orange-house" min="11,20,-80" max="30,46,-61"/>
+    </union>
+    <union name="clay-regions">
+        <cuboid name="centerClay" min="1,30,-105" max="12,31,-94"/>
+        <cuboid name="orangeHouse-1" min="16,30,-74" max="25,31,-67"/>
+        <cuboid name="orangeHouse-2" min="15,36,-75" max="26,37,-66"/>
+        <cuboid name="magentaHouse-1" min="-12,30,-132" max="-3,31,-125"/>
+        <cuboid name="magentaHouse-2" min="-13,36,-133" max="-2,37,-124"/>
+        <cuboid name="orangeCenter" min="-24,30,-75" max="-16,31,-67"/>
+        <cuboid name="magentaCenter" min="31,30,-132" max="39,31,-124"/>
+        <region name="magenta-coalClay"/>
+        <region name="orange-coalClay"/>
+        <cuboid name="centerSpawnerClay" min="3,69,-103" max="10,72,-96"/>
+        <region name="orange-leftClay"/>
+        <region name="orange-rightClay"/>
+        <region name="magenta-leftClay"/>
+        <region name="magenta-rightClay"/>
+    </union>
+    <union name="quartz-regions">
+        <cuboid name="magenta-wool-quartz-center" min="56,20,-163" max="70,31,-149"/>
+        <cuboid name="magenta-wool-quartz-left" min="60,20,-150" max="66,31,-142"/>
+        <cuboid name="magenta-wool-quartz-right" min="49,20,-159" max="57,31,-153"/>
+        <cuboid name="magenta-portal-left" min="69,20,-159" max="74,31,-153"/> <!-- Portals close to spawn -->
+        <cuboid name="magenta-portal-right" min="60,20,-167" max="66,31,-162"/>
+        <cuboid name="magenta-wool-monument" min="76,28,-172" max="79,32,-169"/>
+        <region name="magenta-center"/>
+        <region name="magenta-coal"/>
+        <region name="magenta-house"/>
+        <cuboid name="orange-wool-quartz-center" min="-55,20,-50" max="-41,31,-36"/>
+        <cuboid name="orange-wool-quartz-left" min="-51,20,-57" max="-45,31,-49"/>
+        <cuboid name="orange-wool-quartz-right" min="-42,20,-46" max="-34,31,-40"/>
+        <cuboid name="orange-portal-left" min="-60,20,-47" max="-54,31,-39"/>
+        <cuboid name="orange-portal-right" min="-52,20,-37" max="-44,31,-31"/>
+        <cuboid name="orange-wool-monument" min="-64,28,-30" max="-61,32,-27"/>
+        <region name="orange-center"/>
+        <region name="orange-coal"/>
+        <region name="orange-house"/>
+    </union>
+    <cuboid name="magenta-noFall" min="71,100,-169" max="76,101,-164"/>
+    <cuboid name="orange-noFall" min="-61,100,-35" max="-56,101,-30"/>
+    <union name="magenta-spawn">
+        <cuboid min="48,0,-179" max="86,28,-141"/>
+        <cuboid min="31,0,-179" max="48,28,-152"/>
+        <cuboid min="59,0,-141" max="86,28,-124"/>
+        <cuboid min="22,0,-179" max="31,28,-161"/>
+        <cuboid min="68,0,-124" max="86,28,-115"/>
+    </union>
+    <union name="orange-spawn">
+        <cuboid min="-71,0,-58" max="-33,28,-20"/>
+        <cuboid min="-33,0,-47" max="-16,28,-20"/>
+        <cuboid min="-71,0,-75" max="-44,28,-58"/>
+        <cuboid min="-16,0,-38" max="-7,28,-20"/>
+        <cuboid min="-71,0,-84" max="-53,28,-75"/>
+    </union>
+    <union name="magenta-top">
+        <cuboid min="48,28,-179" max="86,29,-141"/>
+        <cuboid min="31,28,-179" max="48,29,-152"/>
+        <cuboid min="59,28,-141" max="86,29,-124"/>
+        <cuboid min="22,28,-179" max="31,29,-161"/>
+        <cuboid min="68,28,-124" max="86,29,-115"/>
+    </union>
+    <union name="orange-top">
+        <cuboid min="-71,28,-58" max="-33,29,-20"/>
+        <cuboid min="-33,28,-47" max="-16,29,-20"/>
+        <cuboid min="-71,28,-75" max="-44,29,-58"/>
+        <cuboid min="-16,28,-38" max="-7,29,-20"/>
+        <cuboid min="-71,28,-84" max="-53,29,-75"/>
+    </union>
+    <complement name="playable">   
+        <region name="map"/>
+        <rectangle name="magenta-tube" min="70,-172" max="79,-163"/>
+        <rectangle name="magneta-far-left-portal" min="59,-140" max="67,-132"/>
+        <rectangle name="magenta-far-right-portal" min="39,-160" max="47,-152"/>
+        <rectangle name="orange-tube" min="-64,-36" max="-55,-27"/>
+        <rectangle name="orange-far-left-portal" min="-52,-67" max="-44,-59"/>
+        <rectangle name="orange-far-right-portal" min="-32,-47" max="-24,-39"/>
+        <rectangle name="orange-close-left-portal" min="-59,-46" max="-54,-39"/>
+        <rectangle name="orange-wool-room" min="-55,-50" max="-41,-36"/>
+        <rectangle name="orange-close-right-portal" min="-51,-37" max="-45,-32"/>
+        <rectangle name="magenta-close-left-portal" min="69,-159" max="74,-153"/>
+        <rectangle name="magenta-wool-room" min="56,-163" max="70,-149"/>
+        <rectangle name="magenta-close-right-portal" min="60,-167" max="66,-162"/>
+        <region name="min-build"/>
+    </complement>
+    <cuboid name="magenta-wool" min="60,21,-157" max="64,25,-153"/>
+    <cuboid name="orange-wool" min="-49,21,-46" max="-45,25,-42"/>
+    <!-- Portal Regions -->
+    <cuboid name="magenta-left-spawn-top" min="71,29,-157" max="72,31,-155"/>
+    <cuboid name="magenta-left-spawn-bottom" min="71,21,-157" max="72,23,-155"/>
+    <cuboid name="magenta-left-far-top" min="62,29,-137" max="64,31,-135"/>
+    <cuboid name="magenta-left-far-bottom" min="62,21,-137" max="64,23,-135"/>
+    <cuboid name="magenta-right-spawn-top" min="62,29,-165" max="64,31,-164"/>
+    <cuboid name="magenta-right-spawn-bottom" min="62,21,-165" max="64,23,-164"/>
+    <cuboid name="magenta-right-far-top" min="42,29,-157" max="44,31,-155"/>
+    <cuboid name="magenta-right-far-bottom" min="42,21,-157" max="44,23,-155"/>
+    <cuboid name="orange-left-spawn-top" min="-57,29,-44" max="-56,31,-42"/>
+    <cuboid name="orange-left-spawn-bottom" min="-57,21,-44" max="-56,23,-42"/>
+    <cuboid name="orange-left-far-top" min="-49,29,-64" max="-47,31,-62"/>
+    <cuboid name="orange-left-far-bottom" min="-49,21,-64" max="-47,23,-62"/>
+    <cuboid name="orange-right-spawn-top" min="-49,29,-35" max="-47,31,-34"/>
+    <cuboid name="orange-right-spawn-bottom" min="-49,21,-35" max="-47,23,-34"/>
+    <cuboid name="orange-right-far-top" min="-29,29,-44" max="-27,31,-42"/>
+    <cuboid name="orange-right-far-bottom" min="-29,21,-44" max="-27,23,-42"/>
+    <!-- Applying Filters -->
+    <apply block-break="only-orange">
+        <region name="magenta-wool"/>
+    </apply>
+    <apply block-break="only-magenta">
+        <region name="orange-wool"/>
+    </apply>
+    <apply kit="fall-kit">
+        <region name="magenta-noFall"/>
+        <region name="orange-noFall"/>
+    </apply>
+    <apply block="no-beacons" message="You cannot break the beacons or their cooresponding iron blocks">
+        <region name="beacon-regions"/>
+    </apply>
+    <apply block="deny-all">
+        <negative><region name="playable"/></negative>
+        <region name="orange-spawn"/>
+        <region name="magenta-spawn"/>
+    </apply>
+    <apply block="deny-all" message="You cannot break blocks above the height limit!">
+        <cuboid min="-oo,68,-oo" max="oo,oo,oo"/>
+    </apply>
+    <apply block="no-clay" message="This clay is indestructible">
+        <region name="clay-regions"/>
+    </apply>
+    <apply block="no-quartz" message="This quartz is indestructible">
+        <region name="quartz-regions"/>
+    </apply>
+</regions>
+<filters>
+    <filter name="no-quartz" parents="allow-all">
+        <deny>
+            <block>quartz block</block>
+            <block>quartz stairs</block>
+            <block>step:7</block>
+            <block>step:15</block>
+        </deny>
+    </filter>
+    <filter name="no-clay" parents="allow-all">
+        <deny>
+            <block>159</block>
+            <block>95</block>
+        </deny>
+    </filter>
+    <filter name="no-beacons">
+        <deny>
+            <block>beacon</block>
+            <block>iron block</block>
+        </deny>
+    </filter>
+    <filter name="only-orange">
+        <team>orange</team>
+    </filter>
+    <filter name="only-magenta">
+        <team>magenta</team>
+    </filter>
+</filters>
+<portals>
+    <!-- Magenta -->
+    <portal name="magenta-pressure-portal-1" filter="only-orange" bidirectional="true" region="magenta-left-spawn-top">
+        <destination><region name="magenta-left-spawn-bottom"/></destination>
+    </portal>
+    <portal name="magenta-pressure-portal-2" filter="only-orange" bidirectional="true" region="magenta-left-far-top">
+        <destination><region name="magenta-left-far-bottom"/></destination>
+    </portal>
+    <portal name="magenta-pressure-portal-3" filter="only-orange" bidirectional="true" region="magenta-right-spawn-top">
+        <destination><region name="magenta-right-spawn-bottom"/></destination>
+    </portal>
+    <portal name="magenta-pressure-portal-4" filter="only-orange" bidirectional="true" region="magenta-right-far-top">
+        <destination><region name="magenta-right-far-bottom"/></destination>
+    </portal>
+    <!-- Orange -->
+    <portal name="orange-pressure-portal-1" filter="only-magenta" bidirectional="true" region="orange-left-spawn-top">
+        <destination><region name="orange-left-spawn-bottom"/></destination>
+    </portal>
+    <portal name="orange-pressure-portal-2" filter="only-magenta" bidirectional="true" region="orange-left-far-top">
+        <destination><region name="orange-left-far-bottom"/></destination>
+    </portal>
+    <portal name="orange-pressure-portal-3" filter="only-magenta" bidirectional="true" region="orange-right-spawn-top">
+        <destination><region name="orange-right-spawn-bottom"/></destination>
+    </portal>
+    <portal name="orange-pressure-portal-4" filter="only-magenta" bidirectional="true" region="orange-right-far-top">
+        <destination><region name="orange-right-far-bottom"/></destination>
+    </portal>
+</portals>
+<renewables>
+    <renewable rate="4.5" grow="true" particles="true" sound="true" avoid-entities="true">
+        <region>
+            <cuboid min="60,20,-157" max="64,25,-153"/>
+        </region>
+        <renew>wool</renew>
+        <replace>air</replace>
+    </renewable>
+    <renewable rate="4.5" grow="true" particles="true" sound="true" avoid-entities="true">
+        <region>
+            <cuboid min="-49,20,-46" max="-45,25,-42"/>
+        </region>
+        <renew>wool</renew>
+        <replace>air</replace>
+    </renewable>
+    <renewable rate="2.5" grow="true" particles="true" sound="true" avoid-entities="true">
+        <region>
+            <region name="endstone-regions"/>
+        </region>
+        <renew>ender stone</renew>
+        <replace>air</replace>
+    </renewable>
+    <renewable rate="2.5" grow="true" particles="true" sound="true" avoid-entities="true">
+        <region>
+            <region name="endstone-regions"/>
+        </region>
+        <renew>piston base</renew>
+        <replace>air</replace>
+    </renewable>
+    <renewable rate="1.0" grow="true" particles="true" sound="true" avoid-entities="true">
+        <region>
+            <region name="orange-top"/>
+            <region name="magenta-top"/>
+        </region>
+        <renew>stained clay:1</renew>
+        <replace>air</replace>
+    </renewable>
+    <renewable rate="1.0" grow="true" particles="true" sound="true" avoid-entities="true">
+        <region>
+            <region name="orange-top"/>
+            <region name="magenta-top"/>
+        </region>
+        <renew>stained clay:2</renew>
+        <replace>air</replace>
+    </renewable>
+    <renewable rate="1.0" grow="true" particles="true" sound="true" avoid-entities="true">
+        <region>
+            <region name="orange-top"/>
+            <region name="magenta-top"/>
+        </region>
+        <renew>stained clay:9</renew>
+        <replace>air</replace>
+    </renewable>
+    <renewable rate="1.0" grow="true" particles="true" sound="true" avoid-entities="true">
+        <region>
+            <region name="orange-top"/>
+            <region name="magenta-top"/>
+        </region>
+        <renew>stained clay:10</renew>
+        <replace>air</replace>
+    </renewable>
+    <renewable rate="1.0" grow="true" particles="true" sound="true" avoid-entities="true">
+        <region>
+            <region name="orange-top"/>
+            <region name="magenta-top"/>
+        </region>
+        <renew>stained clay:14</renew>
+        <replace>air</replace>
+    </renewable>
+    <renewable rate="2.0" grow="true" particles="true" sound="true" avoid-entities="true">
+        <region>
+            <region name="orange-top"/>
+            <region name="magenta-top"/>
+        </region>
+        <renew>quartz block</renew>
+        <replace>air</replace>
+    </renewable>
+</renewables>
+<killreward>
+    <item>dispenser</item>
+</killreward>
+<itemremove>
+    <item>diamond pickaxe</item>
+    <item>workbench</item>
+    <item>dispenser</item>
+    <item>shears</item>
+    <item>wood sword</item>
+    <item>bow</item>
+    <item>snow ball</item>
+    <item>arrow</item>
+    <item>vine</item>
+    <item>stained clay</item>
+    <item>stained glass</item>
+    <item>nether fence</item>
+    <item>step</item>
+    <item>ladder</item>
+    <item>trap door</item>
+    <item>stone plate</item>
+    <item>piston base</item>
+    <item>redstone block</item>
+    <item>redstone</item>
+    <item>stone button</item>
+    <item>lever</item>
+    <item>redstone torch on</item>
+    <item>diode</item>
+    <item>water bucket</item>
+    <item>bucket</item>
+    <item>tnt</item>
+    <item>leather helmet</item>
+    <item>leather chestplate</item>
+    <item>leather leggings</item>
+    <item>leather boots</item>
+    <item>iron helmet</item>
+    <item>iron chestplate</item>
+    <item>iron leggings</item>
+    <item>iron boots</item>
+    <item>diamond chestplate</item>
+    <item>ender stone</item>
+    <item>packed ice</item>
+    <item>quartz block</item>
+</itemremove>
+<blockdrops>
+    <rule>
+        <filter>
+            <block>coal block</block>a
+        </filter>
+        <drops>
+            <item amount="2" grenade="true" grenade-power="2" grenade-destroy="false" locked="true" name="`eGrenade">fireball</item>
+        </drops>
+        <wrongtool>false</wrongtool>
+    </rule>
+    <rule>
+        <filter>
+            <block>diamond block</block>
+        </filter>
+        <drops>
+            <item><potion duration="15s">REGENERATION</potion></item>
+            <item damage="50" enchantment="PROTECTION_EXPLOSIONS">diamond leggings</item>
+        </drops>
+        <wrongtool>false</wrongtool>
+    </rule>
+</blockdrops>
+<hunger>
+    <depletion>off</depletion>
+</hunger>
+<maxbuildheight>68</maxbuildheight>
+</map>
