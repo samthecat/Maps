@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map proto="1.3.5">
+  <name>Ashwood Grove</name>
+  <version>1.0.0</version>
+  <objective>Team with the most kills after 15 minutes wins</objective>
+  <authors>
+    <author contribution="Map Maker">samtheman43</author>
+    <author contribution="Aesthetics and XML">ultamategamer16</author>
+  </authors>
+  <contributors>
+    <contributor contribution="Sat around and did nothing">tvslayer99</contributor>
+    <contributor contribution="Gameplay theory">Hivlik</contributor>
+    <contributor contribution="XML Help">MySquishyTurtle</contributor>
+  </contributors>
+  <score>
+    <time>900</time>
+    <kills>1</kills>
+    <deaths>1</deaths>
+  </score>
+  <killreward>
+    <item amount="2">exp bottle</item>
+  </killreward>
+  <teams>
+    <team id="yellow-team" color="yellow" max="16" max-overfill="20">Yellow Team</team>
+    <team id="blue-team" color="blue" max="16" max-overfill="20">Blue Team</team>
+  </teams>
+  <kits>
+    <kit name="spawn" force="true">
+      <item slot="0">stone sword</item>
+      <item slot="1">bow</item>
+      <item slot="2" amount="16">golden carrot</item>
+      <item slot="3" amount="1">golden apple</item>
+      <item slot="8" amount="16">arrow</item>
+      <leggings>iron leggings</leggings>
+    </kit>
+    <kit name="blue" parents="spawn">
+      <boots color="334cb2">leather boots</boots>
+      <chestplate color="334cb2">leather chestplate</chestplate>
+      <helmet color="334cb2">leather helmet</helmet>
+    </kit>
+    <kit name="yellow" parents="spawn">
+      <boots color="e5e533">leather boots</boots>
+      <chestplate color="e5Ee33">leather chestplate</chestplate>
+      <helmet color="e5e533">leather helmet</helmet>
+    </kit>
+  </kits>
+  <itemremove>
+    <item>arrow</item>
+    <item>cooked beef</item>
+    <item>leather helmet</item>
+    <item>iron leggings</item>
+    <item>leather chestplate</item>
+    <item>leather boots</item>
+    <item>seeds</item>
+    <item>yellow flower</item>
+  </itemremove>
+  <toolrepair>
+    <tool>stone sword</tool>
+    <tool>bow</tool>
+  </toolrepair>
+  <armorkeep>
+    <item>leather helmet</item>
+    <item>leather chestplate</item>
+    <item>iron leggings</item>
+    <item>leather boots</item>
+  </armorkeep>
+  <gamerules>
+    <doDaylightCycle>false</doDaylightCycle>
+    <doFiretick>false</doFiretick>
+  </gamerules>
+  <spawns team="yellow">
+    <spawn yaw="90" kit="yellow">
+      <cuboid min="1043,87,-177" max="1043,87,-177" />
+    </spawn>
+    <default>
+      <point yaw="180">991,145,-177</point>
+    </default>
+  </spawns>
+  <spawns team="blue" kit="blue">
+    <spawn yaw="-90">
+      <cuboid min="940,87,-177" max="940,87,-177" />
+    </spawn>
+  </spawns>
+</map>
