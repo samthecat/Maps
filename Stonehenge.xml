@@ -1,0 +1,230 @@
+<map proto="1.4.0">
+  <name>Stonehenge</name>
+  <version>1.0.0</version>
+<authors>
+    <author uuid="a43135a4-d7b9-49ab-ac8d-a16bb2513c8d"/>
+    <!-- ny_ -->
+    <author uuid="7ab24d14-0801-48ba-8fea-147ddf400067"/>
+    <!-- samtheman43 -->
+</authors>
+    <contributors>
+      <contributor uuid="670223bb-7560-48c8-8f01-2f463549b917" contribution="he's amazin'"/>
+      <!-- twiz_mwazin -->
+</contributors>
+    <objective>
+      Be the first player to get 20 kills. There are no teams, so watch your back!
+</objective>
+<rules>
+      <rule>You may form alliances!</rule>
+      <rule>Fall damage is disabled</rule>
+</rules>
+<score>
+      <kills>1</kills>
+      <deaths>0</deaths>
+      <limit>20</limit>
+</score>
+<rage/>
+<broadcasts>
+      <alert after="2s">
+        `3This map is an `5FFA map (free for all)`3, so there are no teams. The first player to get`5 20 kills `3wins!
+      </alert>
+      <tip after="10s" every="1m">
+        `3This map is a `5PotShots`3 map, so one arrow can kill you!
+      </tip>
+      <tip after="25s" every="1m">
+        `3Kill other players to get '6potions!
+      </tip>
+    </broadcasts>
+    <players max="10" max-overfill="12" show-name-tags="false"/>
+      <spawns>
+        <spawn kit="spawn" spread="true">
+          <regions>
+            <point yaw="-180">0.5,20,47.5</point>
+            <point yaw="-170">-2.5,24,54.5</point>
+            <point yaw="-160">-15.5,26,59.5</point>
+            <point yaw="-150">-21.5,19,43.5</point>
+            <point yaw="-140">-39.5,24,48.5</point>
+            <point yaw="-130">-39.5,23,39.5</point>
+            <point yaw="-120">-41.5,19,21.5</point>
+            <point yaw="-110">-41.5,19,20.5</point>
+            <point yaw="-100">-44.5,19,17.5</point>
+            <point yaw="-90">-54.5,24,1.5</point>
+            <point yaw="-80">-56.5,24,-8.5</point>
+            <point yaw="-70">-44.5,18,-3.5</point>
+            <point yaw="-60">-48.5,21,-10.5</point>
+            <point yaw="-50">-42.5,20,-28.5</point>
+            <point yaw="-40">-41.5,24,-40.5</point>
+            <point yaw="-30">-26.5,19,-42.5</point>
+            <point yaw="-20">-27.5,24,-50.5</point>
+            <point yaw="-10">-20.5,19,-43.5</point>
+            <point yaw="0" pitch="20">-10,33,-42.5</point>
+            <point yaw="10">2.5,22,-62.5</point>
+            <point yaw="20">21.5,22,-51.5</point>
+            <point yaw="30">35.5,23,-51.5</point>
+            <point yaw="40">32.5,21,-43.5</point>
+            <point yaw="40">32.5,21,-43.5</point>
+            <point yaw="50">40.5,22,-37.5</point>
+            <point yaw="60">51.5,25,-31.5</point>
+            <point yaw="70">56.5,23,-16.5</point>
+            <point yaw="80">42.5,18,-9.5</point>
+            <point yaw="90">56.5,22,3.5</point>
+            <point yaw="100">50.5,19,6.5</point>
+            <point yaw="110">52.5,21,18.5</point>
+            <point yaw="120">37.5,18,23.5</point>
+            <point yaw="130">48.5,22,33.5</point>
+            <point yaw="140">32.5,19,35.5</point>
+            <point yaw="150">37.5,23,50.5</point>
+            <point yaw="160">23.5,20,43.5</point>
+            <point yaw="170">17.5,25,59.5</point>
+            <point yaw="180">7.5,23,52.5</point>
+          </regions>
+        </spawn>
+        <default kit="obs">
+          <regions>
+            <point yaw="0">-9.5,18,-45.5</point>
+          </regions>
+        </default>
+      </spawns>
+      <kits>
+        <kit id="spawn">
+          <item slot="0" unbreakable="true">iron sword</item>
+          <item slot="1" unbreakable="true" enchantment="arrow damage:10" lore="`aInstagib!">bow</item>
+          <item slot="8" amount="1">arrow</item>
+          <helmet color="E5E533" unbreakable="true">leather helmet</helmet>
+          <chestplate color="E5E533" unbreakable="true">leather chestplate</chestplate>
+          <leggings unbreakable="true">chainmail leggings</leggings>
+          <boots color="E5E533" unbreakable="true">leather boots</boots>
+          <potion duration="1" amplifier="10">damage resistance</potion>
+          <potion duration="oo">night vision</potion>
+          <game-mode>adventure</game-mode>
+        </kit>
+        <kit name="obs">
+          <potion duration="oo">night vision</potion>
+        </kit>
+      </kits>
+    <respawn delay="1s" auto="true"/>
+    <disabledamage>
+      <damage>fall</damage>
+    </disabledamage>
+    <killreward>
+      <item slot="8" amount="1">
+        arrow
+      </item>
+    </killreward>
+    <killreward>
+      <filter>
+        <kill-streak count="1"/>
+      </filter>
+      <item amount="1" material="potion" damage="16386">
+        <potion duration="20s">
+          swiftness
+        </potion>
+      </item>
+    </killreward>
+    <killreward>
+      <filter>
+        <kill-streak count="2"/>
+      </filter>
+      <item amount="1" material="potion" damage="16395">
+        <potion duration="20s">
+          leaping
+        </potion>
+      </item>
+    </killreward>
+    <killreward>
+      <filter>
+        <kill-streak count="3"/>
+      </filter>
+      <item amount="1" material="potion" damage="16385">
+        <potion duration="10s" amplifier="3">
+          regeneration
+        </potion>
+      </item>
+    </killreward>
+    <killreward>
+      <filter>
+        <kill-streak count="4"/>
+      </filter>
+      <item amount="1" material="potion" damage="16393"/>
+        <potion duration="20s">
+          strength
+        </potion>
+    </killreward>
+    <killreward>
+      <filter>
+        <kill-streak count="5"/>
+      </filter>
+      <item amount="1" material="potion" damage="16386"/>
+        <potion duration="20s" amplifier="2">
+          swiftness
+        </potion>
+    </killreward>
+    <killreward>
+      <filter>
+        <kill-streak count="6"/>
+      </filter>
+      <item amount="2" material="potion" damage="16389"/>
+        <potion amplifier="3">
+          instant health
+        </potion>
+    </killreward>
+    <killreward>
+      <filter>
+        <kill-streak count="7"/>
+      </filter>
+      <item amount="1" material="potion" damage="16386"/>
+        <potion duration="2m" amplifier="2">
+          swiftness
+        </potion>
+    </killreward>
+    <killreward>
+      <filter>
+        <kill-streak count="8"/>
+      </filter>
+      <item amount="1" material="potion" damage="16395"/>
+        <potion duration="2m" amplifier="3">
+          leaping
+        </potion>
+    </killreward>
+    <killreward>
+      <filter>
+        <kill-streak count="9"/>
+      </filter>
+      <item amount="3" material="potion" damage="16385"/>
+        <potion duration="10s" amplifier="3">
+          regeneration
+        </potion>
+    </killreward>
+    <killreward>
+      <filter>
+        <kill-streak count="10"/>
+      </filter>
+      <item amount="1" material="potion" damage="16393"/>
+        <potion duration="2m" amplifier="2">
+          strength
+        </potion>
+    </killreward>
+    <killreward>
+      <filter>
+        <kill-streak count="11"/>
+      </filter>
+      <item amount="8" material="potion" damage="16389"/>
+        <potion amplifier="3">
+          instant health
+        </potion>
+    </killreward>
+    <itemremove>
+      <item>bow</item>
+      <item>iron sword</item>
+      <item>blaze rod</item>
+      <item>leather helmet</item>
+      <item>leather chestplate</item>
+      <item>chainmail leggings</item>
+      <item>leather boots</item>
+      <item>potion</item>
+    </itemremove>
+    <hunger>
+      <depletion>off</depletion>
+    </hunger>
+    <timelock>on</timelock>
+</map>
