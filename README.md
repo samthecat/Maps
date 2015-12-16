@@ -1,2 +1,2 @@
 # Maps
-This a list of all maps of all Maps I've made for PGM.
+This a list of all maps I've made for PGM.
